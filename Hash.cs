@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace HashTable
 {
-    internal class Hash
+    internal class Hash<TKey, TValue>
     {
+        public TKey Key { get; set; }
+        public TValue Value { get; set; }
+        public Hash<TKey, TValue> Next { get; set; }
+
+        public Hash(TKey key, TValue value)
+        {
+            Key = key;
+            Value = value;
+            Next = null;
+        }
     }
 }
